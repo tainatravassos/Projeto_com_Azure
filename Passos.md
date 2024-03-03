@@ -108,3 +108,7 @@ JSON
     ]
   }
 ]
+
+
+
+A pasta results.html serve para acessamos original_text, translated_text e target_language, que passamos como parâmetros nomeados em render_template usando {{ }}. Essa operação pede para o Flask renderizar o conteúdo como texto sem formatação. Também estamos usando url_for('index') para criar um link de volta para a página padrão. Embora possamos, tecnicamente, digitar o caminho para a página original, usar url_for diz para o Flask ler o caminho da função com o nome que fornecemos (neste caso, index). Se reorganizarmos o site, a URL gerada para o link será sempre válida.
