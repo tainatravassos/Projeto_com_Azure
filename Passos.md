@@ -22,3 +22,7 @@ Um modelo permite que você escreva o HTML principal (ou um modelo) e indique es
 No exemplo anterior, temos o HTML de h1 (um cabeçalho), com o texto que queremos exibir. O {{ name }} indica que queremos exibir uma variável chamada name logo após Bem-vindo. Com essa sintaxe, podemos escrever o HTML com nossas habilidades existentes e injetar as informações dinâmicas conforme necessário.
 
 
+Criação do app.py
+A instrução de importação inclui referências a Flask, que é o núcleo de qualquer aplicativo Flask. Usaremos render_template em alguns instantes, quando quisermos retornar o HTML.
+
+app será o aplicativo principal. Nós o usaremos quando registrarmos nossas rotas na próxima etapa.
