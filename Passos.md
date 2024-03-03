@@ -17,7 +17,7 @@ HTML é a linguagem usada para estruturar as informações exibidas em um navega
 
 Um modelo permite que você escreva o HTML principal (ou um modelo) e indique espaços reservados para as informações dinâmicas. Provavelmente, a sintaxe mais comum para espaço reservado é {{ }}. O Jinja, o mecanismo de modelagem para Flask, usa essa sintaxe.
 
-<h1>Welcome, {{ name }}</h1>
+< h1 >Welcome, {{ name }}</ h1>
 
 No exemplo anterior, temos o HTML de h1 (um cabeçalho), com o texto que queremos exibir. O {{ name }} indica que queremos exibir uma variável chamada name logo após Bem-vindo. Com essa sintaxe, podemos escrever o HTML com nossas habilidades existentes e injetar as informações dinâmicas conforme necessário.
 
