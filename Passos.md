@@ -73,3 +73,38 @@ Criar o modelo para exibir resultados
 Testar o aplicativo
 Adicionar código para chamar o serviço
 app.py contém a lógica para o aplicativo. Adicionaremos algumas importações necessárias para as bibliotecas que usaremos, seguidas pela nova rota para responder ao usuário.
+
+Uma nova rota vou adicionada em app.py.
+O código é comentado para descrever as etapas que estão sendo realizadas. De forma geral, o código faz o seguinte:
+
+Lê o texto que o usuário inseriu e o idioma selecionado no formulário
+Lê as variáveis ambientais que criamos anteriormente no arquivo .env
+Cria o caminho necessário para chamar o serviço de Tradução, que inclui o idioma de destino (o idioma de origem é detectado automaticamente)
+Cria as informações de cabeçalho, que incluem a chave para o serviço de Tradução, o local do serviço e uma ID arbitrária para a tradução
+Cria o corpo da solicitação, que inclui o texto que queremos traduzir
+Chama post em requests para chamar o serviço de Tradução
+Recupera a resposta JSON do servidor, que inclui o texto traduzido
+Recupera o texto traduzido (confira a nota a seguir)
+Chama render_template para exibir a página de resposta
+
+
+Ao chamar o serviço de Tradução, será possível ter várias instruções traduzidas em diversos idiomas em uma única chamada. Como resultado, o JSON retornado pelo serviço contém muitas informações, das quais precisamos apenas de uma pequena parte. Sendo assim, precisamos percorrer alguns níveis para obter o texto traduzido.
+
+Especificamente, precisamos ler o primeiro resultado, depois passar para a coleção de translations, a primeira tradução e para text. Isso é feito pela chamada: translator_response[0]['translations'][0]['text']
+
+JSON
+
+[
+  {
+    "detectedLanguage": {
+      "language": "en",
+      "score": 1.0
+    },
+    "translations": [
+      {
+        "text": "これはテストです",
+        "to": "ja"
+      }
+    ]
+  }
+]
