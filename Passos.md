@@ -22,7 +22,25 @@ Um modelo permite que você escreva o HTML principal (ou um modelo) e indique es
 No exemplo anterior, temos o HTML de h1 (um cabeçalho), com o texto que queremos exibir. O {{ name }} indica que queremos exibir uma variável chamada name logo após Bem-vindo. Com essa sintaxe, podemos escrever o HTML com nossas habilidades existentes e injetar as informações dinâmicas conforme necessário.
 
 
-Criação do app.py
+5. Criação do app.py
 A instrução de importação inclui referências a Flask, que é o núcleo de qualquer aplicativo Flask. Usaremos render_template em alguns instantes, quando quisermos retornar o HTML.
-
 app será o aplicativo principal. Nós o usaremos quando registrarmos nossas rotas na próxima etapa.
+
+Adicionar a rota
+Nosso aplicativo usará uma rota – /. Essa rota é chamada algumas vezes de default ou index, porque será usada se o usuário não fornecer nada além do nome do domínio ou do servidor.
+Usando @app.route, indicamos a rota que queremos criar. O caminho será /, que é a rota padrão. Indicamos que ele será usado para GET. Se uma solicitação GET chegar para /, o Flask chamará de forma automática a função declarada imediatamente abaixo do decorador, index em nosso caso. No corpo de index, indicamos que retornaremos um modelo HTML chamado index.html para o usuário.
+
+
+Criar o modelo HTML para o formulário
+O Jinja, o mecanismo de modelagem para Flask, é muito focado em HTML. Como resultado, podemos usar todas as habilidades e ferramentas HTML que já temos. Vamos usar o Bootstrap para estruturar nossa página e melhorar o aspecto dela. Com o Bootstrap, usaremos diferentes classes CSS no HTML.
+HTML (Hypertext Markup Language) é uma linguagem de marcação padrão utilizada para criar páginas da Web. O HTML consiste em uma série de marcas e atributos para criar títulos, parágrafos, listas, imagens, links e outros elementos que compõem uma página da Web. Quando um usuário solicita uma página da Web, o navegador lê o código HTML e o renderiza como uma página da Web visual com a qual o usuário pode interagir. Para saber mais sobre HTML, consulte HTML básico.
+
+6. Testar o aplicativo
+comando: set FLASK_ENV=development
+ e: flask run
+
+o número da porta padrão que o Flask usa para atender às solicitações HTTP é o 5.000
+
+
+
+
